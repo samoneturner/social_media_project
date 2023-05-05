@@ -28,4 +28,3 @@ class RelationshipForm(forms.ModelForm):
             
         }
 
-

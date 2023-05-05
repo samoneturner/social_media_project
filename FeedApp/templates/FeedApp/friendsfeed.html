@@ -11,22 +11,37 @@
     {% csrf_token %}
     <table style="font-size: 25px;width: 100%;">
         {% for p,c,l in zipped_list %}
-        <tr style="border: 1px solid black;padding: 6px;">
+        <tr style="border: 1px solid rgb(255, 255, 255);padding: 6px;">
             <td>{{p.username}}:&nbsp {{ p }} <br>
                 {% if p.image %}
                 <img src="{{p.image.url}}" class="img-thumbnail" style="max-height:300px" alt="">
                 {% endif %}
             </td>
         </tr>
-        <tr style="border: 1px solid black;padding: 6px;">
+        <tr style="border: 1px solid rgb(255, 255, 255);padding: 6px;">
             <td> {{ p.date_posted }}</td>
-            <td>
-                <button type="submit" name="like" value={{p.id}} style="background-color: transparent;border: none;">
-                    Like: &nbsp {{l}}
-                </button>
-            </td>
-            <td>Comments: &nbsp <a href="{% url 'FeedApp:comments' p.id %}">{{c}}</a>&nbsp&nbsp</td>
         </tr>
+        <tr>
+
+            <td>
+                <button type="submit" name="like" value="{{p.id}}" class="btn btn-info">Like &nbsp {{l}}</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a class="btn btn-info" href="{% url 'FeedApp:comments' p.id %}" role="button">Comments &nbsp
+                    {{c}}</a>&nbsp&nbsp
+            </td>
+        </tr>
+        <tr>
+            &nbsp
+        </tr>
+        <tr>
+            <td>
+                &nbsp
+            </td>
+        </tr>
+
         {% endfor %}
 
 

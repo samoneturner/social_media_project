@@ -10,12 +10,10 @@
 
 <form action="{% url 'FeedApp:profile' %}" method='post'>
     {% csrf_token %}
-    {{ form |crispy}}
+    {{ form|crispy}}
     <br><br>
     <button name="submit" class="btn btn-outline-primary">Update</button>
 </form>
-
-
 
 
 

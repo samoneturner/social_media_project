@@ -1,5 +1,7 @@
 from django.urls import path
 from . import views
+from django.conf.urls.static import static
+from django.conf import settings
 
 app_name = 'FeedApp'
 
@@ -12,5 +14,4 @@ urlpatterns = [
     path('friendsfeed',views.friendsfeed, name='friendsfeed'),
     path('friends/',views.friends, name='friends'),
     ]
-
     
